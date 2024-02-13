@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block title %}Home - My Website{% endblock %}
+
+{% block content %}
+<div class="grid-container" style="margin-left: 5%;">
+    {% for post in posts %}
+        <section class="news-section" style="text-align: center;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="{{post.image}}" style="max-height: 500px; max-width: 500px;" alt="Example Image">
+                <div style="margin-left: 8px;">
+                    <h2>{{post.title}}</h2>
+                </div>
+            </div>
+            <hr>
+            <div class="row" style="max-height: 100px; overflow: hidden;">
+                <p>{{post.content}}</p>
+            </div>
+            <hr>
+            <a style="font-size: 20px; color: aliceblue;" href="{% url 'news_detail_page' post.id %}" >Details</a>
+        </section>    
+    {% endfor %}
+</div>
+    
+{% endblock %}
+

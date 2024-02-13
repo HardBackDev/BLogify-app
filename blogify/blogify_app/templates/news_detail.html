@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block title %}Home - My Website{% endblock %}
+
+{% block content %}
+<a href="{% url 'news_page' %}"
+style="background-color: rgb(66, 9, 9); padding: 10px; color: aliceblue; font-size: 25px; left: 140px;
+position: absolute; top: 120px; border-radius: 15px;">Back</a>
+
+<section style="display: flex; flex-direction: column; align-items: center;">
+    <h1 style="font-size: 40px; font-weight: bolder; color: aliceblue;">{{ post.title }}</h1>
+    <img src="{{post.image}}" style="max-width: 60%;" alt="Post Image">
+    
+    <section style="width: 75%; margin-top: 30px; background-color: rgb(66, 9, 9); box-shadow: 10px 10px 10px 2px rgba(0,0,0,.8); color: aliceblue; padding-left: 20px;
+    padding-right: 20px; font-size: 35px;">
+        <p>{{ post.content }}</p>
+
+    </section>
+
+</section>
+
+{% endblock %}
